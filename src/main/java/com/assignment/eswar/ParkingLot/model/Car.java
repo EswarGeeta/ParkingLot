@@ -2,7 +2,13 @@ package com.assignment.eswar.ParkingLot.model;
 
 public class Car {
 	private String carNumber;
-	private Colours colour;
+	private Colour colour;
+
+	public Car(String carNumber, Colour colour) {
+		super();
+		this.carNumber = carNumber;
+		this.colour = colour;
+	}
 
 	private int parkedAt;
 	
@@ -18,10 +24,10 @@ public class Car {
 	public void setCarNumber(String carNumber) {
 		this.carNumber = carNumber;
 	}
-	public Colours getColour() {
+	public Colour getColour() {
 		return colour;
 	}
-	public void setColour(Colours colour) {
+	public void setColour(Colour colour) {
 		this.colour = colour;
 	}
 }

@@ -24,7 +24,6 @@ public class ParkingSlot {
 		return (carNumber != null);
 	}
 	
-	//service methods
 	public void parkCar(String carNumber)	{
 		setCarNumber(carNumber);
 	}

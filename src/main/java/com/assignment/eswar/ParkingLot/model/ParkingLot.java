@@ -9,7 +9,7 @@ public class ParkingLot {
 	private HashMap<Integer, String> slotToCarNumberMap;
 	private HashMap<String, Car> parkedCars;
 
-	public ParkingLot(int totalParkingSlots) {
+	protected ParkingLot(int totalParkingSlots) {
 		super();
 		this.totalParkingSlots = totalParkingSlots;
 		freeParkingSlots = new TreeSet<Integer>();
@@ -19,8 +19,20 @@ public class ParkingLot {
 		parkedCars = new HashMap<String, Car>();
 	}
 
-	@SuppressWarnings("unused")
-	private boolean isFull()	{
+	private static ParkingLot instance = null;
+
+	public static ParkingLot getParkingLotInstance(int totalParkingSlots) {
+			if (instance == null) {
+				synchronized (ParkingLot.class) {
+					if (instance == null) {
+						instance = new ParkingLot(totalParkingSlots);
+					}
+				}
+			}
+			return instance;
+		}
+
+	public boolean isFull()	{
 		return (freeParkingSlots.size() == 0);
 	}
 	
