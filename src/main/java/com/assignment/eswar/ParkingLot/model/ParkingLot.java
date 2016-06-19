@@ -13,7 +13,7 @@ public class ParkingLot {
 		super();
 		this.totalParkingSlots = totalParkingSlots;
 		freeParkingSlots = new TreeSet<Integer>();
-		for(int i = 0 ; i < totalParkingSlots; i++)
+		for(int i = 1 ; i <= totalParkingSlots; i++)
 			freeParkingSlots.add(i);
 		slotToCarNumberMap = new HashMap<Integer, String>();
 		parkedCars = new HashMap<String, Car>();
