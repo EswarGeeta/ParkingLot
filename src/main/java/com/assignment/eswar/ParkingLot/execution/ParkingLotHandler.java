@@ -9,12 +9,12 @@ import com.assignment.eswar.ParkingLot.service.ParkingLotServiceImpl;
 
 public class ParkingLotHandler 
 {
-	private static ParkingLotService service = new ParkingLotServiceImpl();
-	private static String pattern; 
-	private static Pattern regex;
-	private static Matcher m;
+	private ParkingLotService service = new ParkingLotServiceImpl();
+	private String pattern; 
+	private Pattern regex;
+	private Matcher m;
 
-	public void showSlotForCarNumber(String input) {
+	public int showSlotForCarNumber(String input) {
 		pattern = "slot_number_for_registration_number\\s+(\\S+)";
 		regex = Pattern.compile(pattern);
 		m = regex.matcher(input);
@@ -24,7 +24,9 @@ public class ParkingLotHandler
 				System.out.println("Not found\n");
 			else
 				System.out.println(parkingSlotId + "\n");
-		}		
+			return parkingSlotId;
+		}
+		return 0;
 	}
 
 	public void showSlotsWithColour(String input) {

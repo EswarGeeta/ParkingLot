@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.assignment.eswar.ParkingLot.model.Car;
-import com.assignment.eswar.ParkingLot.model.Colour;
 import com.assignment.eswar.ParkingLot.model.ParkingLot;
 
 public class ParkingLotServiceImpl implements ParkingLotService {
